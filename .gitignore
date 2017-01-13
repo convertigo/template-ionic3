@@ -32,7 +32,11 @@ plugins/android.json
 plugins/ios.json
 www/
 $RECYCLE.BIN/
-DisplayObjects/mobile/*
+DisplayObjects/mobile/assets/*
+DisplayObjects/mobile/build/*
+DisplayObjects/mobile/app.html
+DisplayObjects/mobile/index.html
+DisplayObjects/mobile/service-worker.js
 DisplayObjects/platforms/*
 _private
 
