@@ -1,0 +1,38 @@
+<ion-header>
+	<ion-navbar no-border-bottom>
+	  <button ion-button menuToggle>
+		  <ion-icon name="menu"></ion-icon>
+	  </button>
+	  <ion-title>Page2</ion-title>
+	</ion-navbar>
+	<ion-toolbar no-border-top>
+		<div padding>
+			<ion-segment [(ngModel)]="pet"  color="light">
+				<ion-segment-button value="Seg1">
+					Segment 1
+				</ion-segment-button>
+				<ion-segment-button value="Seg2">
+					Segment 2
+				</ion-segment-button>
+			</ion-segment>
+		</div>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<div [ngSwitch]="pet">
+		<ion-card-content *ngSwitchCase="'Seg1'">
+			<ion-card-title ion-text color="primary">
+				Segment 1
+			</ion-card-title>
+		</ion-card-content>
+
+		<ion-card-content *ngSwitchCase="'Seg2'">
+			<ion-card-title ion-text color="primary">
+				Segment 2
+			</ion-card-title>
+		</ion-card-content>
+
+	</div>
+</ion-content>
+

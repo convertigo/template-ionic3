@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Login</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content class="login-content" padding>
+
+	<ion-card>
+		<img src="assets/images/enterprise-mobility.jpg"/>
+		<ion-card-content>
+			<ion-card-title ion-text color="primary">
+				Please use 'user' and 'password' to login.
+			</ion-card-title>
+			<!--
+				When form is submitted call our own project's 'Login' sequence using CAF 'call' primitive.
+			    'from.user' and 'form.password' will be automatically bound to the 'Login' sequence
+			    input variables 'user' and 'password'
+			-->
+			<form #registerForm="ngForm" (ngSubmit)="call('.Login')">
+				<ion-row>
+					<ion-col>
+						<ion-list inset>
+							<ion-item>
+								<ion-input type="text" placeholder="Email" name="user" [(ngModel)]="form.user"  required></ion-input>
+							</ion-item>
+
+							<ion-item>
+								<ion-input type="password" placeholder="Password" name="password" [(ngModel)]="form.password" required></ion-input>
+							</ion-item>
+						</ion-list>
+					</ion-col>
+				</ion-row>
+
+				<ion-row>
+					<ion-col class="signup-col">
+						<button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+					</ion-col>
+				</ion-row>
+
+			</form>
+		</ion-card-content>
+	</ion-card>
+
+</ion-content>
