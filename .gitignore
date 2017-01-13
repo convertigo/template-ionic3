@@ -12,6 +12,9 @@ log.txt
 .vscode/
 npm-debug.log*
 
+
+ionic/npm-debug.log
+ionic/.idea
 .idea/
 .sass-cache/
 .tmp/
@@ -31,6 +34,7 @@ www/
 $RECYCLE.BIN/
 DisplayObjects/mobile/*
 DisplayObjects/platforms/*
+_private
 
 .DS_Store
 Thumbs.db
