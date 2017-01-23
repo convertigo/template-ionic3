@@ -20,7 +20,7 @@ module.exports = {
       dest: '../DisplayObjects/mobile/build/'
     },
      copyFonts :{
-      src: ['{{ROOT}}/node_modules/ionicons/dist/fonts/**/*', '{{ROOT}}/node_modules/ionic-angular/fonts/**/*'],
+      src: ['{{ROOT}}/node_modules/ionicons/dist/fonts/*', '{{ROOT}}/node_modules/ionic-angular/fonts/*'],
       dest: '../DisplayObjects/mobile/assets/fonts'
     },
     copyFalshUpdate: {

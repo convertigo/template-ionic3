@@ -1,5 +1,5 @@
-# template_Ionic2 for Ionic 2 RC4#
-This convertigo project template can be used to start a Ionic 2 RC4/ Angular 2 project with Convertigo.
+# template_Ionic2 for Ionic 2 RC5#
+This convertigo project template can be used to start a Ionic 2 RC5/ Angular 2 project with Convertigo.
 
 ## Prerequisites ##
 You must install [node.js V 6.5.0](https://nodejs.org/dist/v6.5.0/node-v6.5.0-x64.msi "Node JS") or later on your workstation. 
@@ -172,5 +172,5 @@ The template provides a sample routing table you may use and extend for your app
         )
     )
 
-CAF is still under development but RC4 brings most of the functionnalities. Please use support forum as documentation is not yet ready.
+CAF is still under development but RC5 brings most of the functionnalities. Please use support forum as documentation is not yet ready.
 
