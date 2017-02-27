@@ -1,4 +1,4 @@
-# template_Ionic2 for Ionic 2 RC5#
+# template_Ionic2 for Ionic 2.1.0 #
 This convertigo project template can be used to start a Ionic 2.1.0/ Angular 2.1.1 project with Convertigo.
 
 ## Prerequisites ##
