@@ -1,5 +1,5 @@
 # template_Ionic2 for Ionic 2 RC5#
-This convertigo project template can be used to start a Ionic 2 RC5/ Angular 2 project with Convertigo.
+This convertigo project template can be used to start a Ionic 2.1.0/ Angular 2.1.1 project with Convertigo.
 
 ## Prerequisites ##
 You must install [node.js V 6.5.0](https://nodejs.org/dist/v6.5.0/node-v6.5.0-x64.msi "Node JS") or later on your workstation. 
