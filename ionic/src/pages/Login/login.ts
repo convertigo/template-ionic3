@@ -1,7 +1,7 @@
 import { Component }                                            from '@angular/core';
-import {NavParams, LoadingController}                         from 'ionic-angular';
-import { C8oRouter }                                            from '../../providers/convertigo.router'
-import { C8oPage }                                              from '../../providers/convertigo.page'
+import {NavParams, LoadingController}                           from 'ionic-angular';
+import { C8oRouter }                                            from 'c8ocaf'
+import { C8oPage }                                              from 'c8ocaf'
 import { DomSanitizer }                                         from '@angular/platform-browser';
 
 

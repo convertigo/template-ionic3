@@ -6,8 +6,8 @@ import {Page1}                            from "../pages/Page1/page1";
 import {Page2}                            from "../pages/Page2/page2";
 import {Login}                            from "../pages/Login/login";
 
-import { C8oRouter } 			          from '../providers/convertigo.router';
-import {C8o} from "../providers/c8o/c8o.service";
+import { C8oRouter } 			          from 'c8ocaf';
+import {C8o}                              from "c8osdkangular2";
 
 
 

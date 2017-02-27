@@ -7,13 +7,11 @@ import {Login}                                              from "../pages/Login
 
 // Convertigo CAF Imports
 
-import { C8oRouter} 			                            from '../providers/convertigo.router'
-import { C8oRoute, C8oRouteOptions, C8oRouteListener}       from '../providers/convertigo.routingtable'
-import { C8oPage}                                           from "../providers/convertigo.page";
-import {C8o} from "../providers/c8o/c8o.service";
-import {C8oSettings} from "../providers/c8o/c8oSettings.service";
-import {C8oLogLevel} from "../providers/c8o/c8oLogLevel.service";
-
+//import { C8oRouter} 			                            from 'c8ocaf'
+import { C8oRouter } from 'c8ocaf';
+import { C8oRoute, C8oRouteOptions, C8oRouteListener}       from 'c8ocaf'
+import { C8oPage}                                           from "c8ocaf";
+import { C8o, C8oSettings, C8oLogLevel }                    from "c8osdkangular2";
 /**
  * Disable comments to run in prod mode
  */
