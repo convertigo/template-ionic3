@@ -1,13 +1,15 @@
-import { NgModule }				          from '@angular/core';
-import { IonicApp, IonicModule }          from 'ionic-angular';
-import { DeepLinkConfig } 		          from 'ionic-angular';
-import { MyApp } 				          from './app.component';
-import {Page1}                            from "../pages/Page1/page1";
-import {Page2}                            from "../pages/Page2/page2";
-import {Login}                            from "../pages/Login/login";
+import { NgModule, ErrorHandler }		                                      from '@angular/core';
+import { HttpModule }                                                         from "@angular/http";
+import { BrowserModule }                                                      from '@angular/platform-browser';
+import { IonicApp, IonicModule, IonicErrorHandler, DeepLinkConfig }           from 'ionic-angular';
+import { StatusBar }                                                          from '@ionic-native/status-bar';
+import { MyApp } 				                                              from './app.component';
+import {Page1}                                                                from "../pages/Page1/page1";
+import {Page2}                                                                from "../pages/Page2/page2";
+import {Login}                                                                from "../pages/Login/login";
 
-import { C8oRouter } 			          from 'c8ocaf';
-import {C8o}                              from "c8osdkangular2";
+import { C8oRouter } 			                                              from 'c8ocaf';
+import {C8o}                                                                  from "c8osdkangular";
 
 
 
@@ -30,16 +32,24 @@ export const deepLinkConfig: DeepLinkConfig = {
     Login
   ],
   imports: [
+    BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp, {}, deepLinkConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+
     MyApp,
     Page1,
     Page2,
     Login
   ],
-  providers: [C8o, C8oRouter]
+  providers: [
+    StatusBar,
+    C8o,
+    C8oRouter,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 
 export class AppModule {}

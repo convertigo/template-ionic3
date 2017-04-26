@@ -1,9 +1,9 @@
 import { Component, ViewChild}                              from '@angular/core';
 import { Platform, Nav, App}                                from 'ionic-angular';
-import { StatusBar }                                        from 'ionic-native';
 import { Page1}                                             from "../pages/Page1/page1";
 import { Page2}                                             from "../pages/Page2/page2";
 import {Login}                                              from "../pages/Login/login";
+import {StatusBar}                                          from "@ionic-native/status-bar";
 
 // Convertigo CAF Imports
 
@@ -11,7 +11,7 @@ import {Login}                                              from "../pages/Login
 import { C8oRouter } from 'c8ocaf';
 import { C8oRoute, C8oRouteOptions, C8oRouteListener}       from 'c8ocaf'
 import { C8oPage}                                           from "c8ocaf";
-import { C8o, C8oSettings, C8oLogLevel }                    from "c8osdkangular2";
+import { C8o, C8oSettings, C8oLogLevel }                    from "c8osdkangular";
 /**
  * Disable comments to run in prod mode
  */
@@ -27,7 +27,7 @@ export class MyApp {
     rootPage = Login;
     pages : Array<{title: string, component: any}>;
 
-    constructor(platform: Platform, private c8o: C8o, private router: C8oRouter, private app: App) {
+    constructor(platform: Platform, statusBar: StatusBar, private c8o: C8o, private router: C8oRouter, private app: App) {
         /**
          * declaring page to show in Menu
          */
@@ -124,10 +124,10 @@ export class MyApp {
         let settings: C8oSettings = new C8oSettings();
         settings
             .setDefaultDatabaseName("myDataBaseName")
+            .setEndPoint("http://localhost:18080/convertigo/projects/template_Ionic2")
             .setLogRemote(true)
             .setLogC8o(true)
-            .setLogLevelLocal(C8oLogLevel.DEBUG)
-            .setTrustAllCertificates(true);
+            .setLogLevelLocal(C8oLogLevel.DEBUG);
 
         
         /* ============================================================================================================
@@ -135,7 +135,7 @@ export class MyApp {
            ============================================================================================================*/
 
         platform.ready().then(() => {
-            StatusBar.styleDefault();
+            statusBar.styleDefault();
 			/**
 	         * Then we assign C8oSettings to our c8o Object with the init method
 	         */
