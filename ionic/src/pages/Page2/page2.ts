@@ -3,7 +3,7 @@ import {NavParams, LoadingController}                               from 'ionic-
 import { C8oRouter }                                                from 'c8ocaf';
 import { C8oPage }                                                  from 'c8ocaf';
 import { DomSanitizer }                                             from '@angular/platform-browser';
-import {ChangeDetectorRef, ChangeDetectionStrategy}             from "@angular/core";
+import {ChangeDetectorRef, ChangeDetectionStrategy, Injector}             from "@angular/core";
 
 @Component({
   selector: 'page-product',
@@ -11,7 +11,7 @@ import {ChangeDetectorRef, ChangeDetectionStrategy}             from "@angular/c
 })
 export class Page2 extends C8oPage  {
 
-  constructor(routerProvider : C8oRouter, navParams: NavParams, loadingCtrl: LoadingController, sanitizer: DomSanitizer, ref: ChangeDetectorRef){
-    super(routerProvider, navParams, loadingCtrl, sanitizer, ref);
+  constructor(routerProvider : C8oRouter, navParams: NavParams, loadingCtrl: LoadingController, sanitizer: DomSanitizer, ref: ChangeDetectorRef, injector: Injector){
+    super(routerProvider, navParams, loadingCtrl, sanitizer, ref, injector);
   }
 }
