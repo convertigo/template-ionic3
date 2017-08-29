@@ -39,7 +39,7 @@ DisplayObjects/mobile/index.html
 DisplayObjects/mobile/service-worker.js
 DisplayObjects/platforms/*
 _private
-
+package-lock.json
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate

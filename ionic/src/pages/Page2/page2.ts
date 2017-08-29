@@ -1,5 +1,5 @@
 import { Component }                                                from '@angular/core';
-import {NavParams, LoadingController}                               from 'ionic-angular';
+import {NavParams, LoadingController, MenuController}                               from 'ionic-angular';
 import { C8oRouter }                                                from 'c8ocaf';
 import { C8oPage }                                                  from 'c8ocaf';
 import { DomSanitizer }                                             from '@angular/platform-browser';
@@ -11,7 +11,7 @@ import {ChangeDetectorRef, ChangeDetectionStrategy, Injector}             from "
 })
 export class Page2 extends C8oPage  {
 
-  constructor(routerProvider : C8oRouter, navParams: NavParams, loadingCtrl: LoadingController, sanitizer: DomSanitizer, ref: ChangeDetectorRef, injector: Injector){
-    super(routerProvider, navParams, loadingCtrl, sanitizer, ref, injector);
+  constructor(routerProvider : C8oRouter, navParams: NavParams, loadingCtrl: LoadingController, sanitizer: DomSanitizer, ref: ChangeDetectorRef, injector: Injector, menuCtrl: MenuController){
+    super(routerProvider, navParams, loadingCtrl, sanitizer, ref, injector, menuCtrl);
   }
 }
