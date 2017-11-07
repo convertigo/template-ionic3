@@ -11,6 +11,7 @@ import {ChangeDetectorRef, ChangeDetectionStrategy, Injector}             from "
     templateUrl: 'login.html'
 })
 export class Login extends C8oPage  {
+    public static nameStatic: string = "Login";
     constructor(routerProvider : C8oRouter, navParams: NavParams, loadingCtrl: LoadingController, sanitizer: DomSanitizer, ref: ChangeDetectorRef, injector: Injector, menuCtrl: MenuController){
         super(routerProvider, navParams, loadingCtrl, sanitizer, ref, injector, menuCtrl);
     }

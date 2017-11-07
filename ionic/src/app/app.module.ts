@@ -1,5 +1,4 @@
 import { NgModule, ErrorHandler }		                                      from '@angular/core';
-import { HttpModule }                                                         from "@angular/http";
 import { BrowserModule }                                                      from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, DeepLinkConfig }           from 'ionic-angular';
 import { StatusBar }                                                          from '@ionic-native/status-bar';
@@ -10,6 +9,7 @@ import {Login}                                                                fr
 
 import { C8oRouter } 			                                              from 'c8ocaf';
 import {C8o}                                                                  from "c8osdkangular";
+import {HttpClientModule}                                                     from "@angular/common/http";
 
 
 
@@ -32,8 +32,8 @@ export const deepLinkConfig: DeepLinkConfig = {
     Login
   ],
   imports: [
-    BrowserModule,
-    HttpModule,
+      BrowserModule,
+      HttpClientModule,
     IonicModule.forRoot(MyApp, {}, deepLinkConfig)
   ],
   bootstrap: [IonicApp],

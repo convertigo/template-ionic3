@@ -1,5 +1,5 @@
-# template_Ionic2 for Ionic 3.6.0 #
-This convertigo project template can be used to start a Ionic 3.6.0/ Angular 4.1.3 project with Convertigo.
+# template_Ionic 3.8.0, Angular 4.4.4 #
+This convertigo project template can be used to start a Ionic 3.8.0/ Angular 4.4.4 project with Convertigo.
 ## Prerequisites ##
 You must install [node.js V 6.5.0](https://nodejs.org/dist/v6.5.0/node-v6.5.0-x64.msi "Node JS") or later on your workstation. 
 

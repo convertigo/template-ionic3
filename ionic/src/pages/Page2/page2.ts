@@ -11,7 +11,8 @@ import {ChangeDetectorRef, ChangeDetectionStrategy, Injector}             from "
 })
 export class Page2 extends C8oPage  {
 
-  constructor(routerProvider : C8oRouter, navParams: NavParams, loadingCtrl: LoadingController, sanitizer: DomSanitizer, ref: ChangeDetectorRef, injector: Injector, menuCtrl: MenuController){
-    super(routerProvider, navParams, loadingCtrl, sanitizer, ref, injector, menuCtrl);
+    public static nameStatic: string = "Page2";
+    constructor(routerProvider : C8oRouter, navParams: NavParams, loadingCtrl: LoadingController, sanitizer: DomSanitizer, ref: ChangeDetectorRef, injector: Injector, menuCtrl: MenuController){
+        super(routerProvider, navParams, loadingCtrl, sanitizer, ref, injector, menuCtrl);
   }
 }

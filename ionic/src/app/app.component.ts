@@ -128,7 +128,10 @@ export class MyApp {
             .setLogRemote(true)
             .setLogC8o(true)
             .setLogLevelLocal(C8oLogLevel.DEBUG);
-
+        /**
+         * Then we assign C8oSettings to our c8o Object with the init method
+         */
+        this.c8o.init(settings);
         
         /* ============================================================================================================
              End of Convertigo Angular Framework (CAF) initialization...
@@ -136,10 +139,12 @@ export class MyApp {
 
         platform.ready().then(() => {
             statusBar.styleDefault();
-			/**
-	         * Then we assign C8oSettings to our c8o Object with the init method
-	         */
-	        this.c8o.init(settings);
+            /**
+             * Then we finalize initialization
+             */
+            this.c8o.finalizeInit().then(()=>{
+
+            });
         });
 
     }
