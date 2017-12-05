@@ -3,7 +3,7 @@ import {NavParams, LoadingController, MenuController}                           
 import { C8oRouter }                                            from 'c8ocaf'
 import { C8oPage }                                              from 'c8ocaf'
 import { DomSanitizer }                                         from '@angular/platform-browser';
-import {ChangeDetectorRef, ChangeDetectionStrategy, Injector}             from "@angular/core";
+import {ChangeDetectorRef, Injector}             from "@angular/core";
 
 
 @Component({

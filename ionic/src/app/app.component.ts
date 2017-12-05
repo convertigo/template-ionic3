@@ -7,7 +7,6 @@ import {StatusBar}                                          from "@ionic-native/
 
 // Convertigo CAF Imports
 
-//import { C8oRouter} 			                            from 'c8ocaf'
 import { C8oRouter } from 'c8ocaf';
 import { C8oRoute, C8oRouteOptions, C8oRouteListener}       from 'c8ocaf'
 import { C8oPage}                                           from "c8ocaf";
@@ -143,7 +142,7 @@ export class MyApp {
              * Then we finalize initialization
              */
             this.c8o.finalizeInit().then(()=>{
-
+                // Do stuff
             });
         });
 
