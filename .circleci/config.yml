@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/mern-starter
+    working_directory: ~/template_Ionic2/ionic
     docker:
       - image: circleci/node:8.6.0
     steps:
