@@ -53,7 +53,7 @@ jobs:
       - run:
           name: buildAOT_i.370-a.443
           command: 'cd ./ionic && yarn run ionic:build:prod 2>&1 | tee -a ../result/buildAOT_i.370-a.443.txt'
-      - store_test_results:
+      - store_artifacts:
           path: ./result/buildJIT_i.370-a.443.txt
           path: ./result/buildAOT_i.370-a.443.txt
           path: ./result/buildJIT_i.392-a.500.txt
