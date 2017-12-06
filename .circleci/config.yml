@@ -12,7 +12,7 @@ jobs:
       # Deleting dependencies and lock files
       - run:
           name: prepare_i.392-a.500
-          command: 'cd ./ionic && ([ -f ./yarn.lock ] && rm yarn.lock || "No yarn.lock file found") && ([ -d ./node_modules ] && rm -rf ./node_modules || "No node_modules directory found")'
+          command: 'cd ./ionic && ([ -f ./yarn.lock ] && rm yarn.lock || echo "No yarn.lock file found") && ([ -d ./node_modules ] && rm -rf ./node_modules || echo "No node_modules directory found")'
       # Get package.json
       - run:
           name: copyPackageDotJSON_i.392-a.500
@@ -32,7 +32,7 @@ jobs:
       # Deleting dependencies and lock files
       - run:
           name: prepare_i.370-a.443
-          command: 'cd ./ionic && ([ -f ./yarn.lock ] && rm yarn.lock || "No yarn.lock file found") && ([ -d ./node_modules ] && rm -rf ./node_modules || "No node_modules directory found")'
+          command: 'cd ./ionic && ([ -f ./yarn.lock ] && rm yarn.lock || echo "No yarn.lock file found") && ([ -d ./node_modules ] && rm -rf ./node_modules || echo "No node_modules directory found")'
       # Get package.json
       - run:
           name: copyPackageDotJSON_i.370-a.443
