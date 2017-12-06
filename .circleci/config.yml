@@ -33,28 +33,5 @@ jobs:
       - run:
           name: buildAOT_i.392-a.500
           command: 'cd ./ionic && yarn run ionic:build:prod 2>&1 | tee -a ../result/buildAOT_i.392-a.500.txt'
-      # Deleting dependencies and lock files
-      - run:
-          name: prepare_i.370-a.443
-          command: 'cd ./ionic && ([ -f ./yarn.lock ] && rm yarn.lock || echo "No yarn.lock file found") && ([ -d ./node_modules ] && rm -rf ./node_modules || echo "No node_modules directory found")'
-      # Get package.json
-      - run:
-          name: copyPackageDotJSON_i.370-a.443
-          command: 'cp ./.circleci/packages/IONIC-370_ANGULAR443/package.json ./ionic/package.json && echo "project will be build with the following package.json: " && cat ./ionic/package.json'
-      # Installing dependencies
-      - run:
-          name: installDependencies_i.370-a.443
-          command: 'cd ./ionic && yarn install'
-      # Building JIT
-      - run:
-          name: buildJIT_i.370-a.443
-          command: 'cd ./ionic && yarn run ionic:build 2>&1 | tee -a ../result/buildJIT_i.370-a.443.txt'
-      # Building AOT
-      - run:
-          name: buildAOT_i.370-a.443
-          command: 'cd ./ionic && yarn run ionic:build:prod 2>&1 | tee -a ../result/buildAOT_i.370-a.443.txt'
       - store_artifacts:
-          path: ./result/buildJIT_i.370-a.443.txt
-          path: ./result/buildAOT_i.370-a.443.txt
-          path: ./result/buildJIT_i.392-a.500.txt
-          path: ./result/buildAOT_i.392-a.500.txt
+          path: ./result/
