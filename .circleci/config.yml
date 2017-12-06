@@ -1,26 +1,53 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/template_Ionic2/ionic
     docker:
       - image: circleci/node:8.6.0
     steps:
       - checkout
+      # Installing ionic cli
       - run:
           name: update-ionic
           command: 'sudo yarn global add ionic@latest'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+      # Deleting dependencies and lock files
       - run:
-          name: install-npm-wee
+          name: prepare_i.392-a.500
+          command: 'cd ./ionic && ([ -f ./yarn.lock ] && rm yarn.lock || "No yarn.lock file found") && ([ -d ./node_modules ] && rm -rf ./node_modules || "No node_modules directory found")'
+      # Get package.json
+      - run:
+          name: copyPackageDotJSON_i.392-a.500
+          command: 'cp ./.circleci/packages/IONIC-392_ANGULAR500/package.json ./ionic/package.json'
+      # Installing dependencies
+      - run:
+          name: installDependencies_i.392-a.500
           command: 'cd ./ionic && yarn install'
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./ionic/node_modules
+      # Building JIT
       - run:
-          name: buildJIT
+          name: buildJIT_i.392-a.500
           command: 'cd ./ionic && yarn run ionic:build'
+      # Building AOT
       - run:
-          name: buildAOT
+          name: buildAOT_i.392-a.500
           command: 'cd ./ionic && yarn run ionic:build:prod'
+      # Deleting dependencies and lock files
+      - run:
+          name: prepare_i.370-a.443
+          command: 'cd ./ionic && ([ -f ./yarn.lock ] && rm yarn.lock || "No yarn.lock file found") && ([ -d ./node_modules ] && rm -rf ./node_modules || "No node_modules directory found")'
+      # Get package.json
+      - run:
+          name: copyPackageDotJSON_i.370-a.443
+          command: 'cp ./.circleci/packages/IONIC-370_ANGULAR443/package.json ./ionic/package.json'
+      # Installing dependencies
+      - run:
+          name: installDependencies_i.370-a.443
+          command: 'cd ./ionic && yarn install'
+      # Building JIT
+      - run:
+          name: buildJIT370
+          command: 'cp ./.circleci/packages/IONIC-370_ANGULAR443/package.json ./ionic/package.json && cd ./ionic && rm -rf ./node_modules && rm yarn.lock && yarn run ionic:build'
+      # Building AOT
+      - run:
+          name: buildAOT370
+          command: 'cd ./ionic && yarn run ionic:build:prod'
+      - store_test_results:
+          path: test-results.xml
