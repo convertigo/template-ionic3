@@ -9,6 +9,10 @@ jobs:
       - run:
           name: update-ionic
           command: 'sudo yarn global add ionic@latest'
+      # Creating result folder
+      - run:
+          name: create result folder
+          command: 'mkdir result'
       # Deleting dependencies and lock files
       - run:
           name: prepare_i.392-a.500
@@ -24,11 +28,11 @@ jobs:
       # Building JIT
       - run:
           name: buildJIT_i.392-a.500
-          command: 'cd ./ionic && yarn run ionic:build'
+          command: 'cd ./ionic && yarn run ionic:build 2>&1 | tee -a ../result/buildJIT_i.392-a.500.txt'
       # Building AOT
       - run:
           name: buildAOT_i.392-a.500
-          command: 'cd ./ionic && yarn run ionic:build:prod'
+          command: 'cd ./ionic && yarn run ionic:build:prod 2>&1 | tee -a ../result/buildAOT_i.392-a.500.txt'
       # Deleting dependencies and lock files
       - run:
           name: prepare_i.370-a.443
@@ -43,11 +47,14 @@ jobs:
           command: 'cd ./ionic && yarn install'
       # Building JIT
       - run:
-          name: buildJIT370
-          command: 'cd ./ionic && yarn run ionic:build'
+          name: buildJIT_i.370-a.443
+          command: 'cd ./ionic && yarn run ionic:build 2>&1 | tee -a ../result/buildJIT_i.370-a.443.txt'
       # Building AOT
       - run:
-          name: buildAOT370
-          command: 'cd ./ionic && yarn run ionic:build:prod'
+          name: buildAOT_i.370-a.443
+          command: 'cd ./ionic && yarn run ionic:build:prod 2>&1 | tee -a ../result/buildAOT_i.370-a.443.txt'
       - store_test_results:
-          path: test-results.xml
+          path: ./result/buildJIT_i.370-a.443.txt
+          path: ./result/buildAOT_i.370-a.443.txt
+          path: ./result/buildJIT_i.392-a.500.txt
+          path: ./result/buildAOT_i.392-a.500.txt
