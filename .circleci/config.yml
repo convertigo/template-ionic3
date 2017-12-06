@@ -33,5 +33,20 @@ jobs:
       - run:
           name: buildAOT_i.392-a.500
           command: 'cd ./ionic && yarn run ionic:build:prod 2>&1 | tee -a ../result/buildAOT_i.392-a.500.txt'
+      #prevent from stopping test on error
+      - run:
+          halt_build_on_fail: false  # default true
+          command: bin/rubocop
+      - run:
+          halt_build_on_fail: false  # default true
+          command: bin/rspec
+      # Check for results
+      - run:
+          name: evaluates_buildJIT_i.392-a.500
+          command: '(grep -qs Done in ./result/buildJIT_i.392-a.500.txt && cp ./.circleci/results/icons/passed.png ./result/buildJIT_i.392-a.500.png || cp ./.circleci/results/icons/failed.png ./result/buildJIT_i.392-a.500.png)'
+      # Check for results
+      - run:
+          name: evaluates_buildJIT_i.392-a.500
+          command: '(grep -qs Done in ./result/buildAOT_i.392-a.500.txt && cp ./.circleci/results/icons/passed.png ./result/buildAOT_i.392-a.500.png || cp ./.circleci/results/icons/failed.png ./result/buildAOT_i.392-a.500.png)'
       - store_artifacts:
           path: ./result/
