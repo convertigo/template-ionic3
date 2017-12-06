@@ -9,44 +9,46 @@ jobs:
       - run:
           name: update-ionic
           command: 'sudo yarn global add ionic@latest'
+          when: always
       # Creating result folder
       - run:
           name: create result folder
           command: 'mkdir result'
+          when: always
       # Deleting dependencies and lock files
       - run:
           name: prepare_i.392-a.500
           command: 'cd ./ionic && ([ -f ./yarn.lock ] && rm yarn.lock || echo "No yarn.lock file found") && ([ -d ./node_modules ] && rm -rf ./node_modules || echo "No node_modules directory found")'
+          when: always
       # Get package.json
       - run:
           name: copyPackageDotJSON_i.392-a.500
           command: 'cp ./.circleci/packages/IONIC-392_ANGULAR500/package.json ./ionic/package.json &&  echo "project will be build with the following package.json: " && cat ./ionic/package.json'
+          when: always
       # Installing dependencies
       - run:
           name: installDependencies_i.392-a.500
           command: 'cd ./ionic && yarn install'
+          when: always
       # Building JIT
       - run:
           name: buildJIT_i.392-a.500
           command: 'cd ./ionic && yarn run ionic:build 2>&1 | tee -a ../result/buildJIT_i.392-a.500.txt'
+          when: always
       # Building AOT
       - run:
           name: buildAOT_i.392-a.500
           command: 'cd ./ionic && yarn run ionic:build:prod 2>&1 | tee -a ../result/buildAOT_i.392-a.500.txt'
-      #prevent from stopping test on error
-      - run:
-          halt_build_on_fail: false  # default true
-          command: bin/rubocop
-      - run:
-          halt_build_on_fail: false  # default true
-          command: bin/rspec
+          when: always
       # Check for results
       - run:
           name: evaluates_buildJIT_i.392-a.500
           command: '(grep -qs Done in ./result/buildJIT_i.392-a.500.txt && cp ./.circleci/results/icons/passed.png ./result/buildJIT_i.392-a.500.png || cp ./.circleci/results/icons/failed.png ./result/buildJIT_i.392-a.500.png)'
+          when: always
       # Check for results
       - run:
           name: evaluates_buildJIT_i.392-a.500
           command: '(grep -qs Done in ./result/buildAOT_i.392-a.500.txt && cp ./.circleci/results/icons/passed.png ./result/buildAOT_i.392-a.500.png || cp ./.circleci/results/icons/failed.png ./result/buildAOT_i.392-a.500.png)'
+          when: always
       - store_artifacts:
           path: ./result/
