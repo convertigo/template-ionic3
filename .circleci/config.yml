@@ -48,18 +48,22 @@ jobs:
       - run:
           name: copyPackageDotJSON_i.370-a.443
           command: 'cp ./.circleci/packages/IONIC-370_ANGULAR443/package.json ./ionic/package.json && echo "project will be build with the following package.json: " && cat ./ionic/package.json'
+          when: always
       # Installing dependencies
       - run:
           name: installDependencies_i.370-a.443
           command: 'cd ./ionic && yarn install'
+          when: always
       # Building JIT
       - run:
           name: buildJIT_i.370-a.443
           command: 'cd ./ionic && yarn run ionic:build 2>&1 | tee -a ../result/buildJIT_i.370-a.443.txt'
+          when: always
       # Building AOT
       - run:
           name: buildAOT_i.370-a.443
           command: 'cd ./ionic && yarn run ionic:build:prod 2>&1 | tee -a ../result/buildAOT_i.370-a.443.txt'
+          when: always
       # Check for results
       - run:
           name: evaluates_buildJIT_i.392-a.500
