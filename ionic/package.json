@@ -8,8 +8,7 @@
     "build": "ionic-app-scripts build",
     "ionic:build": "ionic-app-scripts build",
     "ionic:build:prod": "ionic-app-scripts build --prod",
-    "ionic:serve": "ionic-app-scripts serve",
-    "cz": "git cz"
+    "ionic:serve": "ionic-app-scripts serve"
   },
   "dependencies": {
     "@angular/common": "5.0.0",
@@ -30,7 +29,7 @@
     "ionicons": "3.0.0",
     "sw-toolbox": "3.6.0",
     "c8osdkangular": "2.1.56",
-    "c8ocaf": "1.0.87"
+    "c8ocaf": "1.0.88"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.4",
