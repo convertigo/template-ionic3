@@ -2,10 +2,10 @@
 This convertigo project template can be used to start a Ionic 3.9.2 / Angular 5.0.0 project with Convertigo.
 
 ## Build status ##
-#### Ionic 3.9.2 | Angular 5.0.0 | c8osdkangular 2.1.61 | c8ocaf 1.0.93 ####
- Aheod of time compilation: ![status](https://24-71229585-gh.circle-artifacts.com/0/home/circleci/project/result/buildAOT_i.392-a.500.png)
+#### Ionic 3.9.2 | Angular 5.0.0 | c8osdkangular 2.1.62 | c8ocaf 1.0.94 ####
+ Aheod of time compilation: ![status](https://25-71229585-gh.circle-artifacts.com/0/home/circleci/project/result/buildAOT_i.392-a.500.png)
  
-Just in time compilation: ![status](https://24-71229585-gh.circle-artifacts.com/0/home/circleci/project/result/buildJIT_i.392-a.500.png)
+Just in time compilation: ![status](https://25-71229585-gh.circle-artifacts.com/0/home/circleci/project/result/buildJIT_i.392-a.500.png)
 
 ## Prerequisites ##
 You must install [node.js V 8.9.4 LTS](https://nodejs.org/dist/v8.9.4/node-v8.9.4-x64.msi "Node JS") on your workstation. 
