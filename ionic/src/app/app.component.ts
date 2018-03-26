@@ -73,23 +73,14 @@ export class MyApp {
             new C8oRouteListener([".Login"])                                        // When a response comes from ".Login" requestable,
                 .addRoute(
                     new C8oRoute(
-                        (data:any)=>{                                               // and that login == "ok",
-                            return data.login == "ok" ? true : false
-                        },
-                        tableOptions                                                // Use optional routing tables options defined higher,
-                    )
-                    .setTarget("root", Page1)                                       // and route( set as root on stack to display page) to Page1.
-                )
-                .addRoute(
-                    new C8oRoute(
                         (data:any)=>{
                             return data.login == "ko"                               // If instead login == "ko",
                         }
                     )
-                    .setTarget("toast")                                             // Display a Toast with the following options.
-                    .setToastMesage("Your login or password is incorrect")
-                    .setToastDuration(5000)
-                    .setToastPosition("bottom")
+                        .setTarget("toast")                                             // Display a Toast with the following options.
+                        .setToastMesage("Your login or password is incorrect")
+                        .setToastDuration(5000)
+                        .setToastPosition("bottom")
                 )
                 .addFailedRoute(                                                    // When a requestable fails,
                     new C8oRoute(
@@ -97,10 +88,19 @@ export class MyApp {
                             return true                                             // In any case,
                         }
                     )
-                    .setTarget("toast")                                             // Display a Toast with the following options.
-                    .setToastMesage("No network connection")
-                    .setToastDuration(5000)
-                    .setToastPosition("bottom")
+                        .setTarget("toast")                                             // Display a Toast with the following options.
+                        .setToastMesage("No network connection")
+                        .setToastDuration(5000)
+                        .setToastPosition("bottom")
+                )
+                .addRoute(
+                    new C8oRoute(
+                        (data:any)=>{                                               // and that login == "ok",
+                            return data.login == "ok" ? true : false
+                        },
+                        tableOptions                                                // Use optional routing tables options defined higher,
+                    )
+                    .setTarget("setRoot", Page1)                                       // and route( set as root on stack to display page) to Page1.
                 )
         )
 

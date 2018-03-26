@@ -1,8 +1,8 @@
 {
   "name": "Convertigo-ionic-hello-world",
-  "version": "i.392-a.500",
   "author": "Convertigo & Ionic Framework",
   "homepage": "http://www.convertigo.com/",
+  "version": "i.392-a.500",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -24,13 +24,13 @@
     "ionic-angular": "3.9.2",
     "rxjs": "5.5.2",
     "zone.js": "0.8.18",
-    "@ionic-native/core": "4.3.1",
-    "@ionic-native/splash-screen": "4.3.1",
-    "@ionic-native/status-bar": "4.3.1",
+    "@ionic-native/core": "4.3.3",
+    "@ionic-native/splash-screen": "4.3.3",
+    "@ionic-native/status-bar": "4.3.3",
     "ionicons": "3.0.0",
     "sw-toolbox": "3.6.0",
-    "c8osdkangular": "2.1.62",
-    "c8ocaf": "1.0.94"
+    "c8osdkangular": "2.1.64",
+    "c8ocaf": "1.0.100"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.8",
