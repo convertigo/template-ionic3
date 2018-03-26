@@ -71,6 +71,16 @@ export class MyApp {
          */
         this.router.addRouteListener(
             new C8oRouteListener([".Login"])                                        // When a response comes from ".Login" requestable,
+
+                .addRoute(
+                    new C8oRoute(
+                        (data:any)=>{                                               // and that login == "ok",
+                            return data.login == "ok" ? true : false
+                        },
+                        tableOptions                                                // Use optional routing tables options defined higher,
+                    )
+                    .setTarget("setRoot", Page1)                                       // and route( set as root on stack to display page) to Page1.
+                )
                 .addRoute(
                     new C8oRoute(
                         (data:any)=>{
@@ -92,15 +102,6 @@ export class MyApp {
                         .setToastMesage("No network connection")
                         .setToastDuration(5000)
                         .setToastPosition("bottom")
-                )
-                .addRoute(
-                    new C8oRoute(
-                        (data:any)=>{                                               // and that login == "ok",
-                            return data.login == "ok" ? true : false
-                        },
-                        tableOptions                                                // Use optional routing tables options defined higher,
-                    )
-                    .setTarget("setRoot", Page1)                                       // and route( set as root on stack to display page) to Page1.
                 )
         )
 
