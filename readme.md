@@ -1,4 +1,4 @@
-# template_Ionic 3.9.2, Angular 5.0.0 #
+# template-ionic 3.9.2, Angular 5.0.0 #
 This convertigo project template can be used to start a Ionic 3.9.2 / Angular 5.0.0 project with Convertigo.
 
 ## Build status ##
